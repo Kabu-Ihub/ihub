@@ -1,0 +1,80 @@
+/*
+ * Global Styles
+ */
+
+body {
+	font-family: $secondary-font;
+	font-size   : 16px;
+	font-weight : 300;
+	line-height : 1.5;
+	color: $body-color;
+	background-color: $bg-color;
+
+	// @media screen and (max-width:990px){ font-size: 90% }
+	// @media screen and (max-width:768px){ font-size: 80% }
+}
+
+h1,h2,h3,h4,h5,h6{ 
+	margin-top: 0;
+	color: $strong-color;
+	font-family: $primary-font;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+a { 
+	text-decoration: none;
+}
+
+address { font-style: normal }
+
+p{ margin-top: 0 }
+
+.text-center{ text-align: center }
+
+form{
+	input:not([type="submit"]),select,textarea{
+		border: 2px solid #28292c;
+		padding: 10px 10px 10px 40px;
+		background-position: 10px;
+		background-repeat: no-repeat;
+		display: block;
+		font-family: $primary-font;
+		margin-bottom: 10px;
+		@include em(12);
+		text-transform: uppercase;
+		width: 100%;
+		outline: none;
+		background-color: transparent;
+		color: inherit;
+		transition: .3s ease;
+
+		&:hover,&:active,&:focus{
+			border-color: $accent-color;
+		}
+	}
+
+	input[type="submit"]{
+		padding: 10px 20px;
+		background: transparent;
+		border: 2px solid $accent-color;
+		color: $accent-color;
+		font-family: $primary-font;
+		text-transform: uppercase;
+		@include em(14);
+		outline: none;
+		transition: .3s ease;
+
+		&:hover,&:active,&:focus{
+			background-color: $accent-color;
+			color: $secondary-color;
+		}
+	}
+}
+
+.more-link{
+	padding: 20px 30px 20px 0;
+	background: url(images/arrow.png) no-repeat right center;
+	color: $accent-color;
+	@include em(14);
+}

@@ -1,0 +1,431 @@
+/*
+ * Reusable Components Style
+ */
+
+ /* button */
+ .button{
+ 	display: inline-block;
+ 	padding: 15px 35px;
+ 	border: 3px solid white;
+ 	color: white;
+ 	text-transform: uppercase;
+ 	@include em(12);
+ 	font-family: $primary-font;
+ 	transition: .3s ease;
+
+ 	&.invert{
+ 		background-color: white;
+ 		color: $accent-color;
+ 		font-weight: 700;
+ 	}
+
+ 	&:hover{
+ 		border-color: $accent-color;
+ 		color: $accent-color;
+ 	}
+ }
+
+/* fullwidth-block */
+.fullwidth-block{
+	padding: 50px 0 50px;
+	overflow: hidden;
+}
+
+/* Latest News*/
+.latest-news{
+	border: 2px solid #28292c;
+	padding: 30px;
+
+	h3{
+		@include em(14);
+	}
+	
+	ul{
+		list-style: none;
+		padding-left: 0;
+		margin: 0;
+
+		li{
+			border-bottom: 1px solid #28292c;
+			padding: 10px 0;
+
+			&:last-child{ border-bottom: none }
+		}
+	}
+	.entry-title{
+		@include em(16);
+		font-family: $secondary-font;
+		text-transform: initial;
+		margin-bottom: 0;
+		a{
+			color: $accent-color;
+			transition: .3s ease;
+
+			&:hover{
+				color: lighten($accent-color,15%);
+			}
+		}
+	}
+	.date{
+		@include em(14);
+	}
+}
+
+/* feature */
+.feature{
+	margin-bottom: 50px;
+	position: relative;
+
+	header{
+		margin-bottom: 30px;
+
+		.feature-icon,.feature-title-copy{
+			display: inline-block;
+			vertical-align: top;
+		}
+		.feature-icon{ margin-right: 20px}
+		
+		.feature-title{
+			@include em(24);
+			color: white;
+			margin-bottom: 0;
+			line-height: 1;
+		}
+		.feature-subtitle{
+			@include em(12);
+			color: $body-color;
+			text-transform: uppercase;
+		}
+	}
+
+	.feature-grid &{
+		@extend .col-md-4;
+		@extend .col-sm-6;
+		background: $secondary-color;
+		margin-bottom: 0;
+		padding: 50px 30px!important;
+		text-align: center;
+
+		&:nth-child(even){
+			background-color: #242424;
+		}
+		.feature-image{ margin-bottom: 20px }
+		.feature-title{
+			@include em(36);
+			margin-bottom: 10px;
+			color: white;
+			text-transform: uppercase;
+		}
+		p{margin-bottom: 0}
+	}
+
+	&.boxed{
+		padding: 30px;
+		background-color: $secondary-color;
+		margin-bottom: 30px;
+
+		p{margin-bottom: 0}
+	}
+
+}
+.quote-section{
+	margin: 30px 0;
+	padding: 50px 100px;
+	border: 3px solid #28292c;
+
+	@media screen and (max-width:640px){
+		padding: 30px;
+	}
+}
+.quote-slider{
+
+	.slides{
+		@include clearfix;
+		list-style: none;
+		padding: 0;
+		margin:0;
+
+		li{
+			width: 100%;
+			margin-right: -100%;
+			float: left;
+			padding-left:200px;
+			position: relative;
+
+			@media screen and (max-width:640px){
+				padding: 0;
+			}
+		}
+		blockquote{
+			margin: 0;
+		}
+		.quote-avatar{
+			position: absolute;
+			left:0;
+			top:0;
+			@media screen and (max-width:640px){
+				position: relative;
+				margin: 0 auto 30px;
+			}
+		}
+		p{ 
+			@include em(18);
+			line-height: 1.6;
+		}
+		cite,span{
+			@include em(12);
+			font-weight: 500;
+		}
+		cite{
+			font-style: normal;
+			text-transform: uppercase;
+			font-family: $primary-font;
+		}
+		span{
+			color: #4c4c4c;
+			text-transform: uppercase;
+		}
+
+	}
+	.flex-control-paging{
+		margin-left: 200px;
+		list-style: none;
+		padding-left: 0;
+		@media screen and (max-width:640px){
+			margin-left: 0;
+		}
+
+		li{
+			display: inline-block;
+			margin-right: 10px;
+			
+			// border: 2px solid #4c4c4c;
+			text-align: center;
+			position: relative;
+			
+			a{
+				display: block;
+				width: 15px;
+				height: 15px;
+				border: 2px solid $secondary-color;
+				overflow: hiddne;
+				text-indent: -9999px;
+				box-shadow: 0 0 0 2px #4c4c4c;
+				cursor: pointer;
+
+				&.flex-active{
+					background: $accent-color;
+					box-shadow: 0 0 0 2px $accent-color;
+				}
+			}
+
+			/* a{
+				display: block;
+				position: absolute;
+				top:0;
+				bottom:0;
+				left:0;
+				right:0;
+				margin: auto;
+				width: 10px;
+				height: 10px;
+				overflow: hidden;
+				text-indent: -9999px;
+				cursor: pointer;
+
+			} */
+		}
+	}
+}
+
+/* Timeline */
+.timeline{
+	border-top: 3px solid #28292c;
+	@include clearfix;
+
+	@media screen and (max-width:640px){
+		margin-left: 30px;
+		border-top:0;
+		border-left: 3px solid #28292c;
+	}
+
+	.milestone{
+		width: 25%;
+		padding: 30px 15px 0;
+		float: left;
+		text-align: center;
+		position: relative;
+
+
+		&:before{
+			content:" ";
+			width: 29px;
+			height: 29px;
+			background: url(images/bullet.png) no-repeat;
+			display: block;
+			position: absolute;
+			top:-15px;
+			left:0;
+			right:0;
+			margin: auto;
+		}
+
+		@media screen and (max-width:640px){
+
+			padding: 0 0 15px 30px;
+			text-align: left;
+			float: none;
+			width: 100%;
+			
+			&:before{
+				left:-15px;
+				right: auto;
+				top:0;
+				bottom: 0;
+				margin: 0;
+			}
+		}
+
+		.year{
+			color: $accent-color;
+			font-family: $primary-font;
+			@include em(24);
+			margin-bottom: 20px;
+		}
+		.milestone-title{
+			color: white;
+			font-family: $primary-font;
+			@include em(14)
+		}
+	}
+}
+
+.cta{
+	border: 3px solid #28292c;
+	padding: 50px;
+	text-align: center;
+
+	@include em(24);
+	text-transform: uppercase;
+
+	a{color: $accent-color}
+}
+/* Counter */
+.counter{
+	border: 2px solid #28292c;
+	padding: 30px 100px;
+	font-family: $primary-font;
+	@media screen and (max-width:640px){
+		padding: 30px;
+	}
+	.num,.copy{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.num{
+		@include em(200);
+		color: $accent-color;
+		font-weight: 600;
+		line-height: .8;
+		margin:0 30px 0 0;
+		position: relative;
+		top:-20px;
+		
+		@media screen and (max-width: 640px){ @include em(150) }
+	}
+	.copy{
+		@include em(36);
+		text-transform: uppercase;
+		font-weight: 600;
+		line-height: 1;
+		span{
+			display: block;
+			&:first-child{color: $accent-color;}
+		}
+	}
+}
+
+/* Team */
+.team{
+	text-align: center;
+	margin-bottom: 30px;
+	width: 25%;
+	padding: 0 15px;
+	float: left;
+
+	@media screen and (max-width:990px){ width: 50% }
+	@media screen and (max-width:480px){ width: 100% }
+
+	.team-image{
+		overflow: hidden;
+		border-radius: 50%;
+		margin-bottom: 20px;
+		width: 250px;
+		height: 250px;
+		display: inline-block;
+
+		img{
+			display: block;
+		}
+	}
+	.team-name{
+		@include em(24);
+		color: white;
+		text-transform: uppercase;
+		margin-bottom: 0;
+		font-family: $primary-font;
+	}
+	.team-desc{
+		@include em(14);
+		text-transform: uppercase;
+		color: $accent-color;
+		font-family: $primary-font;
+		font-weight: 600;
+		margin-bottom: 20px;
+		display: block;
+	}
+	p{
+		font-size: 1em !important;
+	}
+}
+
+
+
+
+.contact-form{
+	margin-bottom: 50px;
+	
+	#name{@include at2x("images/icon-user","png",16px,18px)}
+	#email{@include at2x("images/icon-envelope-alt","png",16px,11px)}
+	#website{@include at2x("images/icon-globe","png",16px,16px)}
+	#message{
+		@include at2x("images/icon-pencil","png",16px,17px);
+		background-position: 10px 10px;
+		min-height: 200px;
+	}
+}
+
+.map{
+	min-height: 350px;
+	margin-bottom: 30px;
+}
+.contact-info{
+
+	strong{
+		color: white;
+		text-transform: uppercase;
+		@include em(14);
+		font-family: $primary-font;
+		display: block;
+		margin-bottom: 10px;
+	}
+	.contact{
+		a{
+			display: block;
+			color: inherit;
+		}
+	}
+	p{
+		@include em(14);
+	}
+}
