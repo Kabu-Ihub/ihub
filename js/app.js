@@ -84,7 +84,7 @@
 					// options: {
 					// 	icon: new google.maps.MarkerImage(
 					// 		"images/map-marker.png",
-					// 		new google.maps.Size(43, 53, "px", "px")
+					// 		new google.maps.Size(44, 52, "px", "px")
 					// 	)
 					// }
 				}
