@@ -1,5 +1,5 @@
 # ihub.github.io
-##Kabu Ihub Page from a template
+##Kabu iHub Page from a template
 
 ![The Page Outlook](dummy/pagetemp.png)
 
