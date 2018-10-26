@@ -3,7 +3,7 @@ Kabu iHub Page from a template
 
 ![The Page Outlook](dummy/home.png)
 
-![About Section](dummy/about-p.png)
+![About Section](dummy/team.png)
 
 
 Link To Web View 
